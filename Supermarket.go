@@ -173,8 +173,7 @@ func main() {
 	var Ngoc visitor
 	var Thien police
 
-
-	// test
+	// test 10.40 pm
 	//var nonMarketerList []nonMarketerActivity = []nonMarketerActivity{Ngoc, Thien}
 	var MarketerList []MarketerActivity = []MarketerActivity{An, Tuan, Nguyen, Ly}
 	var PeopleList []PeopleActivity = []PeopleActivity{An, Tuan, Nguyen, Ly, Ngoc, Thien}
