@@ -1,13 +1,11 @@
-package Marketer
+package Class
 
 import(
 	"fmt"
-	"Supermarket/Class/People"
 )
 
 type Marketer struct {
-	People.People
-	//People
+	People
 	MarketerActivity
 }
 
@@ -46,7 +44,7 @@ func (s Security) OpenUp() {
 	fmt.Println("Securities open all gates")
 }
 
-// The polymorphism of the CloseDown function
+// The polymorphism of the CloseDown function (in People class)
 func (m Manager) CloseDown() {
 	fmt.Println("A Manager confirms that everything had been done")
 }
@@ -60,7 +58,7 @@ func (s Security) CloseDown() {
 	fmt.Println("Securities close the door and turn on the alarming system")
 }
 
-// The polymorphism of the DefeatBurglary function
+// The polymorphism of the DefeatBurglary function (in People class)
 func (m Manager) DefeatBurglary() {
 	fmt.Println("A Manager collects all reports and give them to police force")
 }

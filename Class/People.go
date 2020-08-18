@@ -1,4 +1,4 @@
-package People
+package Class
 
 import(
 	"fmt"

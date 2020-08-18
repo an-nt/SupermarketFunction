@@ -2,26 +2,25 @@ package Functions
 
 import(
 	"fmt"
-	"Supermarket/Class/People"
-	"Supermarket/Class/Marketer"
-	"Supermarket/Class/NonMarketer"
+	"Supermarket/Class"
+
 )
 
-func OpenUpSupermarket(MarketerList []Marketer.MarketerActivity) {
+func OpenUpSupermarket(MarketerList []Class.MarketerActivity) {
 	fmt.Println("When a supermarket opens in the morning:")
 	for _, member := range MarketerList {
 		member.OpenUp()
 	}
 }
 
-func CloseDownSupermarket(MarketerList []Marketer.MarketerActivity) {
+func CloseDownSupermarket(MarketerList []Class.MarketerActivity) {
 	fmt.Println("When a supermarket closes in the afternoon:")
 	for _, member := range MarketerList {
 		member.CloseDown()
 	}
 }
 
-func BurglaryDetecting(PeopleList []People.PeopleActivity) {
+func BurglaryDetecting(PeopleList []Class.PeopleActivity) {
 	fmt.Println("In any case of having a loss:")
 	for _, member := range PeopleList {
 		member.DefeatBurglary()
@@ -29,15 +28,15 @@ func BurglaryDetecting(PeopleList []People.PeopleActivity) {
 	
 }
 
-func RobberyDefeating(PeopleList []People.PeopleActivity) {
+func RobberyDefeating(PeopleList []Class.PeopleActivity) {
 	fmt.Println("If there is a violent robbery:")
 	for _, member := range PeopleList {
-		member.CallPolice()
 		switch member.(type) {
-		case NonMarketer.Police:
+		case Class.Police:
 			member.DefeatRobbery()
 		default:
 			member.KeepSafe()
+			member.CallPolice()
 		}
 	}
 	

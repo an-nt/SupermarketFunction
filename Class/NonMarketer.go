@@ -1,12 +1,11 @@
-package NonMarketer
+package Class
 
 import(
 	"fmt"
-	"Supermarket/Class/People"
 )
 
 type nonMarketer struct {
-	People.People
+	People
 	nonMarketerActivity
 }
 
