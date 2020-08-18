@@ -1,17 +1,18 @@
-CREATE DATABASE Supermarket1
+CREATE DATABASE Supermarket
 go
 
-use Supermarket1
+use Supermarket
 go
 
 create table Product(
 	Code char(3) not null,
 	Name nvarchar(50) not null,
 	Type char(3),
-	Warehouse char(3),
+	Warehouse int,
 
 	primary key (Code),
 	foreign key (Type) references dbo.ProductType(Code),
+	foreign key (WareHouse) references dbo.Warehouse(Number),
 )
 go
 
