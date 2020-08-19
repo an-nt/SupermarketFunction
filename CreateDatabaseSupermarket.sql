@@ -71,3 +71,12 @@ create table Timesheet(
 
 )
 go
+
+create table Customer(
+	Number int unique not null,
+	Name nvarchar(50),
+	Year int,
+	Nationality	nvarchar(20),
+	Male bit,
+)
+go
