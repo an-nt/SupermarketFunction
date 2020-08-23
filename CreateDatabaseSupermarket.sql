@@ -80,3 +80,18 @@ create table Customer(
 	Male bit,
 )
 go
+
+create table StockHistory (
+	ProductCode char(3) not null,
+	InWarehouse int not null,
+	Day date,
+	Time time,
+	Change int,
+	DoneBy int,
+
+	primary key (ProductCode,InWarehouse,Day, Time),
+	constraint FK_StockHistory_ProductCode_Product foreign key (ProductCode) references dbo.Product(Code),
+	constraint FK_StockHistory_InWarehouse_Warehouse foreign key (InWarehouse) references dbo.Warehouse(Number),	constraint FK_StockHistory_InWarehouse_Warehouse foreign key (InWarehouse) references dbo.Warehouse(Number),
+	constraint FK_StockHistory_DoneBy_Employee foreign key (DoneBy) references dbo.Employee(ID),
+)
+go

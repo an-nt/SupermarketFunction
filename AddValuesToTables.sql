@@ -30,7 +30,8 @@ values ('T05','Clothe')
 
 --Add data to dbo.Product
 insert dbo.Product (Code, Name, Type, Warehouse)
-values ('P01', N'Iphone 11', 'T01',1)
+values (SUBSTRING(REPLACE(CONVERT(varchar(36), NEWID()), '-', ''), 1, 3), N'Iphone 11', 'T01',1)
+
 
 insert dbo.Product (Code, Name, Type, Warehouse)
 values ('P02', N'Galaxy Note 10', 'T01',2)
@@ -92,4 +93,15 @@ values ('P20', N'Túi Gucci', 'T04',3)
 --Add data to dbo.Employee
 insert dbo.Employee (ID, FullName, Male, Nationality, ManageWarehouse, ManageProductType,DirectManager)
 values (1, N'' ,'' ,'' ,null, null, null)
+
+--Add data to dbo.StockHistory
+INSERT INTO [dbo].[StockHistory] ([ProductCode],[InWarehouse],[Day],[Time],[Change])
+VALUES ('P01',1,getdate(),Getdate(),20)
+GO
+
+
+
+select sum(Change) as balance from dbo.StockHistory
+
+
 
