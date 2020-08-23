@@ -96,12 +96,7 @@ values (1, N'' ,'' ,'' ,null, null, null)
 
 --Add data to dbo.StockHistory
 INSERT INTO [dbo].[StockHistory] ([ProductCode],[InWarehouse],[Day],[Time],[Change])
-VALUES ('P01',1,getdate(),Getdate(),20)
+VALUES ('P01',1,getdate(),Getdate(),-10)
 GO
-
-
-
-select sum(Change) as balance from dbo.StockHistory
-
 
 
